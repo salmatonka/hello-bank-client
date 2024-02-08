@@ -16,6 +16,8 @@ import DashboardLayout from "./DashboardLayout";
 import DepositRequest from "../Pages/Dashboard/Request/DepositRequest/DepositRequest";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AccountInfo from "../Pages/Dashboard/AccountInfo/AccountInfo";
+import ContactUs from "../Pages/ExtraPages/ContactUs";
+import OurOffers from "../Pages/ExtraPages/OurOffers";
 
 const routes = createBrowserRouter([
     {
@@ -62,6 +64,14 @@ const routes = createBrowserRouter([
               {
                 path: '/accountDeposit/:id',
                 element: <AccountDeposit />
+              },
+              {
+                path: '/contactUs',
+                element: <ContactUs />
+              },
+              {
+                path: '/ourOffers',
+                element: <OurOffers />
               },
         ]
     },
