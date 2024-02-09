@@ -18,6 +18,13 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AccountInfo from "../Pages/Dashboard/AccountInfo/AccountInfo";
 import ContactUs from "../Pages/ExtraPages/ContactUs";
 import OurOffers from "../Pages/ExtraPages/OurOffers";
+import MyCard from "../Pages/MyUsers/MyCard/MyCard";
+import CardRequest from "../Pages/Dashboard/Request/CardRequest/CardRequest";
+import UserCardRequest from "../Pages/Dashboard/Request/CardRequest/UserCardRequest";
+import MyLoan from "../Pages/MyUsers/MyLoan/MyLoan";
+import LoanDeposit from "../Pages/MyUsers/MyLoan/LoanDeposit";
+import LoanRequest from "../Pages/Dashboard/Request/LoanRequest/LoanRequest";
+import UserLoanRequest from "../Pages/Dashboard/Request/LoanRequest/UserLoanRequest";
 
 const routes = createBrowserRouter([
     {
@@ -66,13 +73,38 @@ const routes = createBrowserRouter([
                 element: <AccountDeposit />
               },
               {
+                path: '/myCard',
+                element: <MyCard />
+              },
+              {
+                path: '/cardRequest/:id',
+                element: <CardRequest />
+              },
+              {
+                path: '/myLoan',
+                element: <MyLoan />
+              },
+              {
+                path: '/loanDeposit/:id',
+                element: <LoanDeposit />
+              },
+              {
+                path: '/loanRequest/:id',
+                element: <LoanRequest />
+              },
+              // {
+              //   path: '/debtRepay/:id',
+              //   element: <DebtRepay />
+              // },
+              {
                 path: '/contactUs',
                 element: <ContactUs />
               },
               {
                 path: '/ourOffers',
                 element: <OurOffers />
-              },
+              }
+              
         ]
     },
     {
@@ -92,14 +124,14 @@ const routes = createBrowserRouter([
             path: '/dashboard/depositRequest',
             element: <DepositRequest />
           },
-        //   {
-        //     path: "/dashboard/userCardRequest",
-        //     element: <UserCardRequest />,
-        //   },
-        //   {
-        //     path: "/dashboard/userLoanRequest",
-        //     element: <UserLoanRequest />,
-        //   },
+          {
+            path: "/dashboard/userCardRequest",
+            element: <UserCardRequest />,
+          },
+          {
+            path: "/dashboard/userLoanRequest",
+            element: <UserLoanRequest />,
+          },
           {
             path: "/dashboard/allUsers",
             element: <AllUsers />,
