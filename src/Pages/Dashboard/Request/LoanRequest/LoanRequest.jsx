@@ -18,7 +18,7 @@ const LoanRequest = () => {
     const { isLoading, refetch, data: usersInfo = {} } = useQuery({
         queryKey: ['/singleAccountDetails', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/singleAccDetails/${id}`)
+            const res = await fetch(`https://hello-bank-server.vercel.app/singleAccDetails/${id}`)
             const data = await res.json()
             return data;
         }
@@ -90,7 +90,7 @@ const LoanRequest = () => {
                             interest: 0.03
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://hello-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'
@@ -128,7 +128,7 @@ const LoanRequest = () => {
                             interest: 0.05
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://hello-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'
@@ -166,7 +166,7 @@ const LoanRequest = () => {
                             interest: 0.07
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://hello-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'

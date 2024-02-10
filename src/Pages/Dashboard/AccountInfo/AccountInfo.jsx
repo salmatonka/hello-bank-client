@@ -13,14 +13,14 @@ const AccountInfo = () => {
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
         queryKey: ['/userAccounts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/userAccounts')
+            const res = await fetch('https://hello-bank-server.vercel.app/userAccounts')
             const data = await res.json()
             return data
         }
     })
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
+        fetch(`https://hello-bank-server.vercel.app/requestedUsersDelete/${id}`, {
             method: 'DELEtE',
             headers: {
 
@@ -36,7 +36,7 @@ const AccountInfo = () => {
     }
 
     const handStatus = (id) => {
-        fetch(`http://localhost:5000/userStatusUpdate/${id}`, {
+        fetch(`https://hello-bank-server.vercel.app/userStatusUpdate/${id}`, {
             method: 'PUt',
             headers: {
 
@@ -52,7 +52,7 @@ const AccountInfo = () => {
             })
     }
 
-    
+
 
     return (
         <div>
@@ -90,7 +90,7 @@ const AccountInfo = () => {
                                         }
                                     </td>
                                     <td className="lg:p-3 p-1">
-                                        <Link to={`/dashboard/openAccountDetails/${user?._id}`}>
+                                        <Link to={`/dashboard/openAccDetails/${user?._id}`}>
                                             <button className="hover:border-[2px] border-gray-700 hover:bg-sky-500 hover:text-gray-700 text-sky-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700">
                                                 <FaInfoCircle />
                                             </button>

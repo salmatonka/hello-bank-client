@@ -15,7 +15,7 @@ const UserCardRequest = () => {
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
       queryKey: ['/dashCardReq'],
       queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/dashCardReq`)
+        const res = await fetch(`https://hello-bank-server.vercel.app/dashCardReq`)
         const data = await res.json()
         return data
       }
@@ -28,7 +28,7 @@ const UserCardRequest = () => {
           accountNumber: accountNumber,
           card: card
         }
-        fetch("http://localhost:5000/dashCardDebit", {
+        fetch("https://hello-bank-server.vercel.app/dashCardDebit", {
           method: 'PUT',
           headers: {
             'Content-type': 'application/json'
@@ -50,7 +50,7 @@ const UserCardRequest = () => {
           accountNumber: accountNumber,
           card: card
         }
-        fetch("http://localhost:5000/dashCardCredit", {
+        fetch("https://hello-bank-server.vercel.app/dashCardCredit", {
           method: 'PUT',
           headers: {
             'Content-type': 'application/json'
@@ -72,7 +72,7 @@ const UserCardRequest = () => {
         id: id,
         accountNumber: accountNumber
       }
-      fetch("http://localhost:5000/dashCardDelete", {
+      fetch("https://hello-bank-server.vercel.app/dashCardDelete", {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json'
@@ -122,7 +122,7 @@ const UserCardRequest = () => {
                         }
                       </td>
                       <td className="lg:lg:p-3">
-                        <Link to={`/dashboard/singleAccountDetails/${user?.accountNumber}`}>
+                        <Link to={`/dashboard/singleAccDetails/${user?.accountNumber}`}>
                           <button className="hover:border-[2px] border-gray-700 hover:bg-sky-500 hover:text-gray-700 text-sky-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700">
                             <FaInfoCircle />
                           </button>

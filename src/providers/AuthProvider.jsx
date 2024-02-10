@@ -6,72 +6,76 @@ import { app } from '../Firebase/firebase.config';
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
-    const googleProvider = new GoogleAuthProvider();
-
-
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+  const googleProvider = new GoogleAuthProvider();
 
 
-// createUser
-const createUser = (email, password) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+
+  // createUser
+  const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
-}
+  }
 
-// updateName
-const updateName = (firstName,photo)=>{
+  // updateName
+  const updateName = (firstName, photo) => {
     // setLoading(true)
-    return updateProfile(auth.currentUser,{ displayName:firstName,
-    photoURL: photo })
+    return updateProfile(auth.currentUser, {
+      displayName: firstName,
+      photoURL: photo
+    })
   }
 
 
 
 
-//   verifyEmail
-const verifyEmail = () =>{
-return sendEmailVerification(auth.currentUser)
-}
+  //   verifyEmail
+  const verifyEmail = () => {
+    return sendEmailVerification(auth.currentUser)
+  }
 
-// googleSignIn
-const googleSignIn = ()=>{
-return signInWithPopup(auth,googleProvider)
-}
+  // googleSignIn
+  const googleSignIn = () => {
+    return signInWithPopup(auth, googleProvider)
+  }
 
-// login
-const login = (email,password) =>{
-    return signInWithEmailAndPassword(auth,email, password)
-}
-// forgetPassword
-const resetPassword = (email) =>{
-return sendPasswordResetEmail(auth,email)
-}
-// logOut
-const logOut = () =>{
-return signOut(auth)
-}
+  // login
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+  // forgetPassword
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email)
+  }
+  // logOut
+  const logOut = () => {
+    return signOut(auth)
+  }
 
 
-useEffect(() => {
+  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        console.log(currentUser);
-        setUser(currentUser);
+      console.log(currentUser);
+      setUser(currentUser);
     })
 
     return () => {
-        return unsubscribe();
+      return unsubscribe();
     }
-}, [])
+  }, [])
 
-const authInfo = { user,
-     loading, 
-     createUser,
-     updateName,
-     verifyEmail,
-     googleSignIn, 
-     login,resetPassword,logOut};
+  const authInfo = {
+    user,
+    loading,
+    createUser,
+    updateName,
+    verifyEmail,
+    googleSignIn,
+    login, resetPassword, logOut
+  };
   return (
     <AuthContext.Provider value={authInfo}>
       {children}

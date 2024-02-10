@@ -16,7 +16,7 @@ const MyLoan = () => {
         queryKey: ["/userLoans", user?.email],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/userLoans?email=${user?.email}`
+                `https://hello-bank-server.vercel.app/userLoans?email=${user?.email}`
             );
             const data = await res.json();
             return data;

@@ -18,7 +18,7 @@ const AccountDeposit = () => {
     const { isLoading, refetch, data: userInfo = {} } = useQuery({
         queryKey: ['/singleAccDetails', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/singleAccDetails/${id}`)
+            const res = await fetch(`https://hello-bank-server.vercel.app/singleAccDetails/${id}`)
             const data = await res.json()
             return data;
         }
@@ -41,7 +41,7 @@ const AccountDeposit = () => {
         }
 
         console.log(userDeposit)
-            fetch(`http://localhost:5000/depositRequest`, {
+            fetch(`https://hello-bank-server.vercel.app/depositRequest`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(userDeposit)

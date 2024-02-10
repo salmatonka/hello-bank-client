@@ -10,7 +10,7 @@ const LoanDeposit = () => {
     const { isLoading, refetch, data: usersInfo = {} } = useQuery({
         queryKey: ['/singleLoanDetails', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/singleLoanDetails/${id}`)
+            const res = await fetch(`https://hello-bank-server.vercel.app/singleLoanDetails/${id}`)
             const data = await res.json()
             return data
         }
@@ -35,7 +35,7 @@ const LoanDeposit = () => {
             }
 
 
-            // fetch(`http://localhost:5000/lInfoUpdate`, {
+            // fetch(`https://hello-bank-server.vercel.app/lInfoUpdate`, {
             //     method: 'PUT',
             //     headers: {
             //         'Content-type': 'application/json'

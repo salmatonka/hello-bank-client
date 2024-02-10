@@ -8,7 +8,7 @@ const AccountDetails = () => {
     const [details, setDetails] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/accounts/${accountType}`)
+        fetch(`https://hello-bank-server.vercel.app/accounts/${accountType}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [accountType]);

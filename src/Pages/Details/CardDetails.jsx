@@ -8,7 +8,7 @@ const CardDetails = () => {
     const [details, setDetails] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cards/${cardType}`)
+        fetch(`https://hello-bank-server.vercel.app/cards/${cardType}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [cardType]);

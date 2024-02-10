@@ -15,7 +15,7 @@ const CardRequest = () => {
   const { isLoading, refetch, data: usersInfo = {} } = useQuery({
       queryKey: ['/singleAccDetails', id],
       queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/singleAccDetails/${id}`)
+          const res = await fetch(`https://hello-bank-server.vercel.app/singleAccDetails/${id}`)
           const data = await res.json()
           return data
       }
@@ -41,7 +41,7 @@ const handleSubmit = event => {
   }
   console.log(cardData)
 
-  fetch("http://localhost:5000/cardsReq", {
+  fetch("https://hello-bank-server.vercel.app/cardsReq", {
       method: 'POST',
       headers: {
           'Content-type': 'application/json'
