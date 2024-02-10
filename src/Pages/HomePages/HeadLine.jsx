@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const HeadLine = () => {
   return (
-    <div className='' style={{backgroundColor:'#010313'}} >
+    <div className=''  >
         <h4 className='text-xl   text-center py-4 font-extrabold  text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500 self-center whitespace-nowrap '>
         <Typewriter
             words={['Welcome! We are providing a safe, secure, and life time guaranty for our clients. continue with Hello Bank.']}

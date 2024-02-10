@@ -15,7 +15,7 @@ const Home = () => {
   useTitle('Home');
   return (
       <div>
-          <HeadLine />
+          {/* <HeadLine /> */}
           <HomeBanner />
           <CardsSlider />
           <TaxCalculation />
