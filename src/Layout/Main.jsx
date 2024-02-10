@@ -17,7 +17,7 @@ import HomeBanner from "../Pages/HomePages/HomeBanner";
 const Main = () => {
     // logOut
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user);
+    console.log(user);
 
     const [open, setOpen] = useState(false);
     const [accountOpen, setAccountOpen] = useState(false);
@@ -84,7 +84,7 @@ const Main = () => {
                             <a href="https://flowbite.com/" className="flex items-center pl-2.5 mb-5">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Hello_bank%21_Logo.png" className="h-6 mr-3 sm:h-7" alt="logo" />
                                 <span
-                                    className="font-extrabold text-3xl text-center text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500 self-center whitespace-nowrap">Hello Bank</span>
+                                    className="font-extrabold lg:text-3xl text-xl text-center text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500 self-center whitespace-nowrap">Hello Bank</span>
                             </a>
                             <hr className="w-84 border border-sky-500 mb-6" />
 
@@ -291,7 +291,7 @@ const Main = () => {
                     <a href="https://flowbite.com/" className="flex items-center pl-2.5 mb-5">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Hello_bank%21_Logo.png" className="h-6 mr-3 sm:h-7" alt="logo" />
                         <span
-                            className="font-extrabold text-3xl text-center text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500 self-center whitespace-nowrap">Hello Bank</span>
+                            className="font-extrabold lg:text-3xl text-xl text-center text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500 self-center whitespace-nowrap">Hello Bank</span>
                     </a>
                     <hr className="w-84 border border-sky-500 mb-6" />
 

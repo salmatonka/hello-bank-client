@@ -28,32 +28,31 @@ const LoanDeposit = () => {
                 lAmount: usersInfo?.lAmount,
                 tLAmount: usersInfo?.tLAmount,
                 id: usersInfo?._id,
-                accountNumber: usersInfo?.accountNumber
-,
+                accountNumber: usersInfo?.accountNumber,
                 amount: usersInfo?.amount,
                 nid: usersInfo?.nid
             }
 
 
-            // fetch(`https://hello-bank-server.vercel.app/lInfoUpdate`, {
-            //     method: 'PUT',
-            //     headers: {
-            //         'Content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(userInfo)
-            // })
-            // .then(res => res.json())
-            // .then(data => {
-            //     console.log(data);
-            //     if (data.acknowledged === true) {
-            //         toast.success('Loan Status updated successfully')
-            //         refetch()
-            //     }
-            // })
+            fetch(`https://hello-bank-server.vercel.app/lInfoUpdate`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged === true) {
+                    toast.success('Loan Status updated successfully')
+                    refetch()
+                }
+            })
         }
-        // else {
-        //     console.log("Your Information Is Wrong");
-        // }
+        else {
+            console.log("Your Information Is Wrong");
+        }
     }
     
     return (
